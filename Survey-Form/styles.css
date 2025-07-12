@@ -1,1 +1,247 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f23;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            min-height: 100vh;
+            color: #e2e8f0;
+            line-height: 1.6;
+            letter-spacing: -0.025em;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        #title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.05em;
+        }
+
+        #description {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .group {
+            margin-bottom: 32px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-input, .dropdown-options, textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-input:focus, .dropdown-options:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        .form-input::placeholder, textarea::placeholder {
+            color: #64748b;
+        }
+
+        .dropdown-options {
+            cursor: pointer;
+        }
+
+        .dropdown-options option {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 12px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .group p {
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .text-about {
+            margin-bottom: 8px !important;
+        }
+
+        /* Checkbox and Radio Styling */
+        .group label:has(input[type="checkbox"]), .group label:has(input[type="radio"]) {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-weight: 400;
+            cursor: pointer;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .group label:has(input[type="checkbox"]):hover, .group label:has(input[type="radio"]):hover {
+            color: #667eea;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: #667eea;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        #submit {
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 24px;
+            letter-spacing: -0.025em;
+        }
+
+        #submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #7c93f0 0%, #8b5cb8 100%);
+        }
+
+        #submit:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                padding: 20px 0;
+            }
+            
+            .main-container {
+                padding: 32px 24px;
+                margin: 0 10px;
+            }
+            
+            #title {
+                font-size: 1.8rem;
+            }
+            
+            #description {
+                font-size: 1rem;
+            }
+            
+            .group {
+                margin-bottom: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .main-container {
+                padding: 24px 20px;
+            }
+            
+            .form-input, .dropdown-options, textarea {
+                padding: 14px 16px;
+            }
+        }
+
+        /* Focus states for accessibility */
+        input:focus, select:focus, textarea:focus, button:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* Custom scrollbar for textarea */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        textarea::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 4px;
+        }
+
+        textarea::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.7);
+        }
