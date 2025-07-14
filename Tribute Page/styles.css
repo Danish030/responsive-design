@@ -1,0 +1,256 @@
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f23;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            letter-spacing: -0.025em;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #main {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        #title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.05em;
+            text-align: center;
+        }
+
+        #main > p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 48px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        #img-div {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        #image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        #img-caption {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        #tribute-info {
+            margin-top: 48px;
+        }
+
+        #tribute-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        ul {
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        li:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        li strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        blockquote {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 48px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        blockquote::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            left: 24px;
+            font-size: 4rem;
+            color: rgba(102, 126, 234, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        blockquote p {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        cite {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        #tribute-info > h3:last-of-type {
+            margin-top: 48px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #94a3b8;
+        }
+
+        #tribute-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        #tribute-link:hover {
+            color: #7c93f0;
+            border-bottom-color: #7c93f0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            #main {
+                padding: 32px 24px;
+            }
+            
+            #img-div {
+                padding: 16px;
+            }
+            
+            ul {
+                max-width: 100%;
+            }
+            
+            li {
+                padding: 16px 20px;
+            }
+            
+            blockquote {
+                padding: 24px 20px;
+            }
+            
+            blockquote::before {
+                font-size: 3rem;
+                top: 8px;
+                left: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #main {
+                padding: 24px 16px;
+            }
+            
+            li {
+                padding: 12px 16px;
+            }
+            
+            blockquote {
+                padding: 20px 16px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus states for accessibility */
+        a:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
