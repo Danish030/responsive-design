@@ -1,0 +1,343 @@
+/* Import Inter font for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f0f23;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+  color: #f8fafc;
+  line-height: 1.6;
+  letter-spacing: -0.015em;
+  min-height: 100vh;
+  padding: 20px;
+  font-weight: 400;
+}
+
+/* Screen reader only content */
+span[class~="sr-only"] {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  position: absolute !important;
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+/* Main container */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Section styling */
+section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+/* Header styling */
+h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 0;
+}
+
+h1 .flex {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+h1 .flex span:first-of-type {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 .flex span:last-of-type {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: -0.015em;
+}
+
+/* Years header */
+#years {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 16px 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+#years span {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  width: 4.5rem;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+/* Table wrapper */
+.table-wrap {
+  padding: 0;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 48px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+table:last-child {
+  margin-bottom: 0;
+}
+
+/* Table caption */
+table caption {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Table header */
+thead {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+}
+
+thead tr {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+thead th, thead td {
+  padding: 20px 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+thead td:first-child {
+  width: 40%;
+}
+
+thead th {
+  width: 20%;
+}
+
+/* Table body */
+tbody th {
+  text-align: left;
+  padding: 20px 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+}
+
+tbody td {
+  padding: 20px 16px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.9rem;
+}
+
+/* Data rows */
+tr.data {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+tr.data:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+tr.data th .description {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Total rows */
+tr.total {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-top: 2px solid rgba(102, 126, 234, 0.5);
+  border-bottom: 2px solid rgba(102, 126, 234, 0.5);
+}
+
+tr.total th {
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+}
+
+tr.total td {
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+}
+
+tr.total:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.25) 100%);
+}
+
+/* Current year highlighting */
+.current {
+  position: relative;
+  font-weight: 700 !important;
+  color: #67e8f9 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, #67e8f9, #06b6d4);
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(103, 232, 249, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  main {
+    padding: 20px 0;
+  }
+  
+  section {
+    padding: 32px 24px;
+  }
+  
+  #years {
+    padding: 12px 16px;
+  }
+  
+  #years span {
+    width: 3.5rem;
+    font-size: 0.8rem;
+  }
+  
+  table caption {
+    font-size: 1.25rem;
+  }
+  
+  thead th, thead td,
+  tbody th, tbody td {
+    padding: 16px 12px;
+    font-size: 0.85rem;
+  }
+  
+  tr.data th .description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 24px 16px;
+  }
+  
+  #years {
+    padding: 10px 12px;
+  }
+  
+  #years span {
+    width: 3rem;
+    font-size: 0.75rem;
+  }
+  
+  thead th, thead td,
+  tbody th, tbody td {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+  
+  tr.data th .description {
+    font-size: 0.7rem;
+    margin-top: 6px;
+  }
+}
+
+/* Focus states for accessibility */
+table:focus-within {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Smooth animations */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
